@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UserList from "./Components/UserList";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useUsersContext } from "./Context/UsersContext";
@@ -7,6 +7,7 @@ import { HiArrowUturnLeft } from "react-icons/hi2";
 export default function App() {
   const navigate = useNavigate();
   const { state, dispatch } = useUsersContext();
+
   function addUserHandler() {
     if (state.isAddUserClicked) {
       dispatch({
@@ -31,7 +32,7 @@ export default function App() {
             <div className="btn-group fs-6 d-flex justify-content-between align-items-center">
               {state.isAddUserClicked ? (
                 <button
-                  className="btnAdd text-white"
+                  className="btnAdd text-white "
                   onClick={() => addUserHandler()}
                 >
                   {state.isAddUserClicked ? "Back" : "Add User"}
@@ -49,7 +50,11 @@ export default function App() {
               {state.isAddUserClicked ? <HiArrowUturnLeft /> : <FaUserPlus />}
             </div>
             <h2 className="fs-4">
-              {state.isAddUserClicked ? "Add New User" : "Home"}
+              {state.isAddUserClicked && !state.showInfoUser.status
+                ? "Add New User"
+                : state.showInfoUser.status
+                ? "User Info"
+                : "Home"}
             </h2>
           </div>
           <Outlet />

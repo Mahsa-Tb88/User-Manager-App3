@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useUsersContext } from "../Context/UsersContext";
 import { addUsers, getAllUsers, updateUsers } from "../data/storage";
+import { useNavigate } from "react-router-dom";
 export default function TableUser() {
+  console.log("now");
   const { state, dispatch } = useUsersContext();
-
+  const navigate = useNavigate();
   const listOfProvince = [
     "British Columbia",
     "Alberta",
@@ -29,7 +31,7 @@ export default function TableUser() {
       phone: state.editUser.status ? user.phone : "",
       province: state.editUser.status ? listOfProvince[user.province] : "",
       image: state.editUser.status
-        ? user.img
+        ? user.avatarURL
         : "https://i.pravatar.cc/300?img=",
       desc: state.editUser.status ? user.desc : "",
     },
@@ -60,6 +62,7 @@ export default function TableUser() {
         data.image,
         data.desc
       );
+      navigate("/");
     }
 
     const newUsers = getAllUsers();
