@@ -1,0 +1,88 @@
+.userList {
+  background-color: #f7f7f7;
+  .inputSearch {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 20px;
+    .search {
+      border: 1px solid #dee2e6;
+      padding: 4px 7px;
+      border-radius: 5px;
+      outline: none;
+    }
+  }
+  .title {
+    border-bottom: 1px solid #dee2e6;
+  }
+  .list {
+    height: 550px;
+    overflow: auto;
+  }
+}
+.user {
+  cursor: pointer;
+  .name,
+  .family {
+    font-size: 17px;
+  }
+}
+
+.user:hover {
+  background-color: rgb(124, 183, 249);
+}
+.userSelected {
+  background-color: #e77f9e !important;
+  color: #fff !important;
+}
+.header {
+  border-bottom: 1px solid #dee2e6;
+  height: 79px;
+  padding: 0 10px;
+}
+
+.btn-group {
+  background-color: #0d6efd;
+  padding: 5px 10px;
+  color: #fff;
+
+  .btnAdd {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+.table {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  .input {
+    width: 250px;
+    padding: 4px 7px;
+    border: 1px solid rgb(174, 174, 174);
+    border-radius: 3px;
+  }
+  .label {
+    background-color: transparent;
+  }
+  .img {
+    background-color: transparent;
+  }
+  .btn-submit {
+    background-color: #0d6efd;
+    color: #fff;
+    outline: none;
+    border: 1px solid #0d6efd;
+    padding: 4px 20px;
+    border-radius: 4px;
+  }
+  .btn-submit:hover {
+    background-color: #015eea;
+  }
+  .form-control {
+    resize: none;
+  }
+  .errors {
+    color: rgb(209, 16, 16);
+    background-color: transparent;
+  }
+}
