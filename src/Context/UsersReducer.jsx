@@ -2,7 +2,12 @@ export function usersReducer(state, action) {
   const { type, payload } = action;
   switch (type) {
     case "UserClicked":
-      return { ...state, isAddUserClicked: payload };
+      return {
+        ...state,
+        isAddUserClicked: payload,
+        showInfoUser: { status: false, id: null },
+        editUser: { status: false, id: null },
+      };
     case "addUserSubmit":
       return {
         ...state,

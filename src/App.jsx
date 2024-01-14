@@ -52,8 +52,10 @@ export default function App() {
             <h2 className="fs-4">
               {state.isAddUserClicked && !state.showInfoUser.status
                 ? "Add New User"
-                : state.showInfoUser.status
+                : state.showInfoUser.status && !state.editUser.status
                 ? "User Info"
+                : state.editUser.status
+                ? "Edit User"
                 : "Home"}
             </h2>
           </div>

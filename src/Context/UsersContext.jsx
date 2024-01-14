@@ -11,7 +11,7 @@ function UsersContextProvider({ children }) {
     users: initialUsers,
     isAddUserClicked: false,
     showInfoUser: { status: false, id: null },
-    // editUser: { status: false, id: null },
+    editUser: { status: false, id: null },
     search: "",
   });
 

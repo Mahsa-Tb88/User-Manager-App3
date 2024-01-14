@@ -8,20 +8,8 @@ export default function UserInfo() {
   const { state, dispatch } = useUsersContext();
   const params = useParams();
   const navigate = useNavigate();
-  console.log(params.id);
   const user = getAllUsers().find((user) => user.id == params.id);
-  const listOfProvince = [
-    "British Columbia",
-    "Alberta",
-    "Manitoba",
-    "New Brunswick",
-    "Nova Scotia",
-    "Ontario",
-    "Newfoundland and Labrador",
-    "Prince Edward Island",
-    "Quebec",
-    "Saskatchewan",
-  ];
+
   function deleteUserHandler(id) {
     deleteUser(id);
     const users = getAllUsers();
