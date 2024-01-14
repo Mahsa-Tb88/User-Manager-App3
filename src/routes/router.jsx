@@ -16,8 +16,8 @@ const router = createBrowserRouter([
       {
         path: "/user/:id",
         element: <UserInfo />,
-        children: [{ path: "edit", element: <NotFound /> }],
       },
+      { path: "/user/:id/edit", element: <TableUser /> },
       { path: "*", element: <NotFound /> },
     ],
   },

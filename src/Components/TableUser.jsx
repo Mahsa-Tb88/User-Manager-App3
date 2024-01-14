@@ -51,8 +51,10 @@ export default function TableUser() {
       );
       dispatch({
         type: "showInfoOfUser",
-        payload: { status: true, id: user.id },
+        payload: { status: false, id: null },
+        // payload: { status: true, id: user.id },
       });
+      navigate("/");
     } else {
       addUsers(
         data.name,
