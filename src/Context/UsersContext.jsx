@@ -1,6 +1,5 @@
 import React, { useContext, useReducer } from "react";
-// import { getAllUsers } from "../utils/storage";
-import { usersReducer } from "./usersReducer";
+import { usersReducer } from "./UsersReducer";
 
 const UsersContext = React.createContext();
 export default UsersContext;
