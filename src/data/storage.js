@@ -23,7 +23,14 @@ function deleteUser(id) {
   saveUsers(filterdUsers);
 }
 
-function addUsers(firstname, lastname, phone, province, avatarURL, desc) {
+function addUsers(
+  firstname,
+  lastname,
+  phone,
+  province,
+  avatarURL,
+  description
+) {
   const users = getAllUsers();
   let id = null;
   if (users.length) {
@@ -38,7 +45,7 @@ function addUsers(firstname, lastname, phone, province, avatarURL, desc) {
     phone,
     province,
     avatarURL,
-    desc,
+    description,
   };
   users.push(newUser);
   saveUsers(users);
@@ -52,12 +59,20 @@ function updateUsers(
   phone,
   province,
   avatarURL,
-  desc
+  description
 ) {
   let users = getAllUsers();
   users = users.map((user) => {
     if (user.id == id) {
-      return { id, firstname, lastname, phone, province, avatarURL, desc };
+      return {
+        id,
+        firstname,
+        lastname,
+        phone,
+        province,
+        avatarURL,
+        description,
+      };
     } else {
       return user;
     }

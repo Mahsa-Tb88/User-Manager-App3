@@ -5,7 +5,6 @@ import { useUsersContext } from "../Context/UsersContext";
 import { addUsers, getAllUsers, updateUsers } from "../data/storage";
 import { useNavigate } from "react-router-dom";
 export default function TableUser() {
-  console.log("now");
   const { state, dispatch } = useUsersContext();
   const navigate = useNavigate();
   const listOfProvince = [
@@ -24,6 +23,7 @@ export default function TableUser() {
 
   const user =
     state.editUser.status && users.find((user) => user.id == state.editUser.id);
+  console.log(user);
   const { register, handleSubmit, watch, formState } = useForm({
     defaultValues: {
       name: state.editUser.status ? user.firstname : "",
@@ -33,7 +33,7 @@ export default function TableUser() {
       image: state.editUser.status
         ? user.avatarURL
         : "https://i.pravatar.cc/300?img=",
-      desc: state.editUser.status ? user.desc : "",
+      description: state.editUser.status ? user.description : "",
     },
   });
   const { errors } = formState;
@@ -47,7 +47,7 @@ export default function TableUser() {
         data.phone,
         data.province,
         data.image,
-        data.desc
+        data.description
       );
       dispatch({
         type: "showInfoOfUser",
@@ -62,7 +62,7 @@ export default function TableUser() {
         data.phone,
         listOfProvince.indexOf(data.province),
         data.image,
-        data.desc
+        data.description
       );
       navigate("/");
     }
@@ -170,7 +170,7 @@ export default function TableUser() {
         <textarea
           className="form-control"
           type="text"
-          {...register("desc")}
+          {...register("description")}
         ></textarea>
       </div>
       <div>
